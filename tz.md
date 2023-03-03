@@ -34,17 +34,14 @@
 
 
 ## 2. DB
-### 2.1 role (customer, seller)
-- name
-- user_id
 
-### 2.2 customer_request
+### 2.1 customer_request
 - name
 - price_from
 - price_up_to
 - product_condition
 
-### 2.3 product_seller
+### 2.2 product_seller
 - name
 - price
 - product_condition
