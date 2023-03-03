@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CustomerRequestController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +21,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/customers', [CustomerRequestController::class, 'index'])->name('customers.index');
+Route::post('/customers', [CustomerRequestController::class, 'store'])->name('customers.store');
+
