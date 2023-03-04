@@ -9,11 +9,6 @@ use Illuminate\View\View;
 
 class ProductSellerController extends Controller
 {
-    public function __construct()
-    {
-
-    }
-
     public function index(): View
     {
         $productSellers = (ProductSeller::all()) ? ProductSeller::all() : "";

@@ -75,14 +75,18 @@
         </tr>
         </thead>
         <tbody>
-        @foreach($productSellers as $productSeller)
+        @foreach($customerRequests as $customerRequest)
+
             <tr>
-                <th scope="row">{{ $productSeller->id }}</th>
-                <td>{{ $productSeller->name }}</td>
-                <td>{{ $productSeller->price_from }}</td>
-                <td>{{ $productSeller->price_up_to }}</td>
-                <td>{{ $productSeller->product_condition }}</td>
-                <td>{{ $productSeller->created_at }}</td>
+                <th scope="row">{{ $customerRequest->id }}</th>
+                <td>{{ $customerRequest->name }}</td>
+                <td>{{ $customerRequest->price_from }}</td>
+                <td>{{ $customerRequest->price_up_to }}</td>
+                <td>{{ $customerRequest->product_condition }}</td>
+                <td>{{ $customerRequest->created_at }}</td>
+                <td>
+                    <a href="{{ route('products.related', $customerRequest->id ) }}">Схожие продукты</a>
+                </td>
             </tr>
         @endforeach
         </tbody>

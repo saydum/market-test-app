@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreCustomerRequest;
 use App\Models\CustomerRequest;
+use App\Models\ProductSeller;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 
@@ -11,8 +12,8 @@ class CustomerRequestController extends Controller
 {
     public function index(): View
     {
-        $productSellers = (CustomerRequest::all()) ? CustomerRequest::all() : "";
-        return view('customer.index', ['customerRequests' => $productSellers]);
+        $customerRequests = (CustomerRequest::all()) ? CustomerRequest::all() : "";
+        return view('customer.index', ['customerRequests' => $customerRequests]);
     }
 
     public function store(StoreCustomerRequest $request): RedirectResponse
@@ -25,5 +26,21 @@ class CustomerRequestController extends Controller
             'user_id' => auth()->id(),
         ]);
         return redirect()->route('customers.index');
+    }
+
+    public function relatedProduct(int $id): View
+    {
+        $customerRequestName = "";
+        $customerRequest = CustomerRequest::where('id', $id)->limit(1)->get();
+
+        foreach ($customerRequest as $value) {
+            $customerRequestName = $value->name;
+        }
+
+        $relatedProducts = ProductSeller::where('name', 'LIKE', '%'. $customerRequestName . '%')->limit(25)->get();
+        return view('customer.related', [
+            'relatedProducts' => $relatedProducts,
+            'customerRequestName' => $customerRequestName,
+        ]);
     }
 }
