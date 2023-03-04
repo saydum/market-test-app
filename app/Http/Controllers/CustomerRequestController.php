@@ -11,8 +11,8 @@ class CustomerRequestController extends Controller
 {
     public function index(): View
     {
-        $customerRequests = (CustomerRequest::all()) ? CustomerRequest::all() : "";
-        return view('customer.index', ['customerRequests' => $customerRequests]);
+        $productSellers = (CustomerRequest::all()) ? CustomerRequest::all() : "";
+        return view('customer.index', ['customerRequests' => $productSellers]);
     }
 
     public function store(StoreCustomerRequest $request): RedirectResponse

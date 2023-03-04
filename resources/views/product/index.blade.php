@@ -12,33 +12,25 @@
         data-bs-target="#added"
         aria-expanded="false"
         aria-controls="collapseExample">
-        Добавить запрос
+        Добавить товар
     </button>
     <div id="added" class="collapse">
 
-        <form action="{{ route('customers.store') }}" method="post" class="py-3">
+        <form action="{{ route('products.store') }}" method="post" class="py-3">
             @csrf
             <div class="row py-3">
-                <div class="col">
+                <div class="col-md-9">
                     <label>
                         Название товара
                     </label>
                     <input name="name" type="text" class="form-control">
                 </div>
-            </div>
 
-            <div class="row py-3">
-                <div class="col">
+                <div class="col-md-3">
                     <label>
-                        Цена от
+                        Цена
                     </label>
-                    <input name="price_from" type="number" class="form-control">
-                </div>
-                <div class="col">
-                    <label>
-                        Цена до
-                    </label>
-                    <input name="price_up_to" type="number" class="form-control">
+                    <input name="price" type="number" class="form-control">
                 </div>
             </div>
 
@@ -62,14 +54,13 @@
 
 
     <hr>
-    <h3 class="py-2 text-start">История запросов</h3>
+    <h3 class="py-2 text-start">Мои товары</h3>
     <table class="table table-hover">
         <thead>
         <tr>
             <th scope="col">#</th>
             <th scope="col">Название</th>
-            <th scope="col">Цена от</th>
-            <th scope="col">Цена до</th>
+            <th scope="col">Цена</th>
             <th scope="col">Состояние товара</th>
             <th scope="col">Дата</th>
         </tr>
@@ -79,8 +70,7 @@
             <tr>
                 <th scope="row">{{ $productSeller->id }}</th>
                 <td>{{ $productSeller->name }}</td>
-                <td>{{ $productSeller->price_from }}</td>
-                <td>{{ $productSeller->price_up_to }}</td>
+                <td>{{ $productSeller->price }}</td>
                 <td>{{ $productSeller->product_condition }}</td>
                 <td>{{ $productSeller->created_at }}</td>
             </tr>

@@ -49,6 +49,21 @@
                                 </li>
                             @endif
                         @else
+                            <ul class="nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page" href="{{ route('customers.index') }}">Запросы покупателей</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('products.index') }}">Товары</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Мои товары</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link disabled">Мои запросы</a>
+                                </li>
+                            </ul>
+
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
