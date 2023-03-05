@@ -73,6 +73,9 @@
                 <td>{{ $productSeller->price }}</td>
                 <td>{{ $productSeller->product_condition }}</td>
                 <td>{{ $productSeller->created_at }}</td>
+                <td>
+                    <a href="{{ route('customers.related', $productSeller->id ) }}">Схожие Запросы</a>
+                </td>
             </tr>
         @endforeach
         </tbody>
