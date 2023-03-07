@@ -62,6 +62,7 @@
             <th scope="col">Название</th>
             <th scope="col">Цена</th>
             <th scope="col">Состояние товара</th>
+            <th scope="col">Продавец</th>
             <th scope="col">Дата</th>
         </tr>
         </thead>
@@ -72,6 +73,11 @@
                 <td>{{ $productSeller->name }}</td>
                 <td>{{ $productSeller->price }}</td>
                 <td>{{ $productSeller->product_condition }}</td>
+                <td>
+                    @foreach(\App\Models\User::where('id', $productSeller->user_id)->get('name') as $user)
+                        {{ $user->name }}
+                    @endforeach
+                </td>
                 <td>{{ $productSeller->created_at }}</td>
                 <td>
                     <a href="{{ route('customers.related', $productSeller->id ) }}">Схожие Запросы</a>

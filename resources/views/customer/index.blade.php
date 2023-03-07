@@ -71,6 +71,7 @@
             <th scope="col">Цена от</th>
             <th scope="col">Цена до</th>
             <th scope="col">Состояние товара</th>
+            <th scope="col">Покупатель</th>
             <th scope="col">Дата</th>
         </tr>
         </thead>
@@ -83,6 +84,11 @@
                 <td>{{ $customerRequest->price_from }}</td>
                 <td>{{ $customerRequest->price_up_to }}</td>
                 <td>{{ $customerRequest->product_condition }}</td>
+                <td>
+                    @foreach(\App\Models\User::where('id', $customerRequest->user_id)->get('name') as $user)
+                        {{ $user->name }}
+                    @endforeach
+                </td>
                 <td>{{ $customerRequest->created_at }}</td>
                 <td>
                     <a href="{{ route('products.related', $customerRequest->id ) }}">Схожие продукты</a>
