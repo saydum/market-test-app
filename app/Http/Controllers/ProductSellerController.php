@@ -12,7 +12,7 @@ class ProductSellerController extends Controller
 {
     public function index(): View
     {
-        $productSellers = (ProductSeller::all()) ? ProductSeller::all() : "";
+        $productSellers = ProductSeller::all();
         return view('product.index', ['productSellers' => $productSellers]);
     }
 
