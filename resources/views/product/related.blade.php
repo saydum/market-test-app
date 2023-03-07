@@ -26,7 +26,7 @@
                     <td>{{ $relatedCustomer->price }}</td>
                     <td>{{ $relatedCustomer->product_condition }}</td>
                     <td>{{ $relatedCustomer->user_id }}</td>
-                    <td>{{ $relatedCustomer->created_at }}</td>
+                    <td>{{ date('d.m.Y H:i', strtotime($relatedCustomer->created_at)) }}</td>
                 </tr>
             @endforeach
             </tbody>

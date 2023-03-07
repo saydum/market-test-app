@@ -80,7 +80,7 @@
                         {{ $user->name }}
                     @endforeach
                 </td>
-                <td>{{ $productSeller->created_at }}</td>
+                <td>{{ date('d.m.Y H:i', strtotime($productSeller->created_at)) }}</td>
                 <td>
                     <a href="{{ route('customers.related', $productSeller->id ) }}">Схожие Запросы</a>
                 </td>
