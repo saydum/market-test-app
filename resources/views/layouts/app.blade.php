@@ -57,7 +57,7 @@
                                     <a class="nav-link" href="{{ route('products.index') }}">Товары</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Мои товары</a>
+                                    <a class="nav-link" href="{{ route('myproducts') }}">Мои товары</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ route('myrequests') }}" class="nav-link">Мои запросы</a>

@@ -33,3 +33,4 @@ Route::get('/customers/myrequests/', [CustomerRequestController::class, 'myReque
 Route::get('/products', [ProductSellerController::class, 'index'])->name('products.index');
 Route::post('/products', [ProductSellerController::class, 'store'])->name('products.store');
 Route::get('/products/related-product/{id}', [ProductSellerController::class, 'relatedCustomer'])->name('customers.related');
+Route::get('/products/myproducts/', [ProductSellerController::class, 'myProducts'])->name('myproducts');

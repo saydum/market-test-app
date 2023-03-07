@@ -25,7 +25,11 @@
                     <td>{{ $relatedCustomer->name }}</td>
                     <td>{{ $relatedCustomer->price }}</td>
                     <td>{{ $relatedCustomer->product_condition }}</td>
-                    <td>{{ $relatedCustomer->user_id }}</td>
+                    <td>
+                        @foreach(\App\Models\User::where('id', $relatedCustomer->user_id)->get('name') as $user)
+                            {{ $user->name }}
+                        @endforeach
+                    </td>
                     <td>{{ date('d.m.Y H:i', strtotime($relatedCustomer->created_at)) }}</td>
                 </tr>
             @endforeach

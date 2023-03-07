@@ -27,6 +27,14 @@ class ProductSellerController extends Controller
         return redirect()->route('products.index');
     }
 
+    public function myProducts(): View
+    {
+        return view('product.index', [
+            'title' => 'Мои продукты',
+            'productSellers' => ProductSeller::where('user_id', '=', auth()->id())->get(),
+        ]);
+    }
+
     public function relatedCustomer(int $id): View
     {
         $productSellerName = "";
