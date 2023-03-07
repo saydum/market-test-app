@@ -28,6 +28,14 @@ class CustomerRequestController extends Controller
         return redirect()->route('customers.index');
     }
 
+    public function myRequests(): View
+    {
+        return view('customer.index', [
+            'title' => 'Мои запросы',
+            'customerRequests' => CustomerRequest::where('user_id', '=', auth()->id())->get(),
+        ]);
+    }
+
     public function relatedProduct(int $id): View
     {
         $customerRequestName = "";

@@ -54,7 +54,9 @@
 
 
     <hr>
-    <h3 class="py-2 text-start">Мои товары</h3>
+    <h3 class="py-2 text-start">
+        {{ (!empty($title)) ? $title : "Все товары" }}
+    </h3>
     <table class="table table-hover">
         <thead>
         <tr>

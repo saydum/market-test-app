@@ -62,7 +62,9 @@
 
 
     <hr>
-    <h3 class="py-2 text-start">История запросов</h3>
+    <h3 class="py-2 text-start">
+        {{ (!empty($title)) ? $title : "История запросов" }}
+    </h3>
     <table class="table table-hover">
         <thead>
         <tr>

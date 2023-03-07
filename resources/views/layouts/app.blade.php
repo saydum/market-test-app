@@ -60,7 +60,7 @@
                                     <a class="nav-link" href="#">Мои товары</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link disabled">Мои запросы</a>
+                                    <a href="{{ route('myrequests') }}" class="nav-link">Мои запросы</a>
                                 </li>
                             </ul>
 
