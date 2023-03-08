@@ -22,7 +22,7 @@ class CustomerRequestFactory extends Factory
             'price_from' => fake()->numberBetween(100, 300),
             'price_up_to' => fake()->numberBetween(100, 100000),
             'product_condition' => 'Новый',
-            'user_id' => (User::where('role')->get() == 'Покупатель') ? 1 : User::all()->random()->id,
+            'user_id' => (User::where('role')->get() == 'customer') ? 1 : User::all()->random()->id,
         ];
     }
 }

@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+{{--<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">--}}
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+{{--    <meta name="csrf-token" content="{{ csrf_token() }}">--}}
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
@@ -50,18 +50,24 @@
                             @endif
                         @else
                             <ul class="nav">
-                                <li class="nav-item">
-                                    <a class="nav-link" aria-current="page" href="{{ route('customers.index') }}">Запросы покупателей</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('products.index') }}">Товары</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('myproducts') }}">Мои товары</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{ route('myrequests') }}" class="nav-link">Мои запросы</a>
-                                </li>
+                                @if(Auth::user()->role == 'customer')
+                                    <li class="nav-item">
+                                        <a class="nav-link" aria-current="page" href="{{ route('customers.index') }}">Запросы покупателей</a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a href="{{ route('myrequests') }}" class="nav-link">Мои запросы</a>
+                                    </li>
+                                @endif
+                                @if(Auth::user()->role ==  'seller')
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('products.index') }}">Товары</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('myproducts') }}">Мои товары</a>
+                                    </li>
+                                @endif
+
                             </ul>
 
                             <li class="nav-item dropdown">

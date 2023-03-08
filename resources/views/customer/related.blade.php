@@ -26,7 +26,7 @@
                     <td>{{ $relatedProduct->price }}</td>
                     <td>{{ $relatedProduct->product_condition }}</td>
                     <td>
-                        @foreach(\App\Models\User::where('id', $customerRequest->user_id)->get('name') as $user)
+                        @foreach(\App\Models\User::where('id', $relatedProduct->user_id)->get('name') as $user)
                             {{ $user->name }}
                         @endforeach
                     </td>

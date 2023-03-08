@@ -5,7 +5,7 @@
     <div class="col justify-content-center">
 
         <h3 class="py-2 text-start">
-            Схожие товары с <code>{{ $productSellerName }}</code>
+            Схожие запросы с товаром <code>{{ $productSellerName }}</code>
         </h3>
         <table class="table table-hover">
             <thead>

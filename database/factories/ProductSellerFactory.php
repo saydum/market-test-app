@@ -21,7 +21,7 @@ class ProductSellerFactory extends Factory
             'name' => fake()->title(20),
             'price' => fake()->numberBetween(100, 100000),
             'product_condition' => 'Новый',
-            'user_id' => (User::where('role')->get() == 'Продавец') ? 1 : User::all()->random()->id,
+            'user_id' => (User::where('role')->get() == 'seller') ? 1 : User::all()->random()->id,
         ];
     }
 }
