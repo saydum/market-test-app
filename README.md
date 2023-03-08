@@ -36,7 +36,9 @@
 ```bash
 git clone https://github.com/saydum/market-test-app.git
 ```
-#### 2. Запускаем скрит
+#### 2. Переходим и запускаем скрит
+`cd market-test-app`
+
 ```bash
 sh start.sh
 ```
