@@ -44,6 +44,10 @@ git clone https://github.com/saydum/market-test-app.git
 ```bash
 sh start.sh
 ```
+#### 3. Запус миграции и генерация данных
+```bash
+php artisan migrate --seed
+```
 
-#### 3. Открываем
+#### 4. Открываем
 [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
