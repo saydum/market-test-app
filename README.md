@@ -32,8 +32,11 @@
 - docker
 - docker-compose
 
-1. Клонируем репозиторию 
-`git clone https://github.com/saydum/market-test-app.git`
-
-2. Запускаем скрит
-`sh start.sh`
+#### 1. Клонируем репозиторию 
+```bash
+git clone https://github.com/saydum/market-test-app.git
+```
+#### 2. Запускаем скрит
+```bash
+sh start.sh
+```
