@@ -1,7 +1,7 @@
 #!/bin/sh
 composer install &&
 npm install &&
-npm build &&
+npm run build &&
 docker-compose up -d &&
 cp .env.example .env &&
 php artisan migrate &&
