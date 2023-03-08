@@ -42,3 +42,6 @@ git clone https://github.com/saydum/market-test-app.git
 ```bash
 sh start.sh
 ```
+
+#### 3. Открываем
+[http://127.0.0.1:8000/](http://127.0.0.1:8000/)
