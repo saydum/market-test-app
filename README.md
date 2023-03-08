@@ -42,7 +42,7 @@ git clone https://github.com/saydum/market-test-app.git
 `cd market-test-app`
 
 ```bash
-./start
+sh start.sh
 ```
 
 #### 3. Открываем
